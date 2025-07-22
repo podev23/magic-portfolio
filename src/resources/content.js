@@ -1,16 +1,16 @@
 import { Logo } from "@once-ui-system/core";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Fabian",
+  lastName: "Weighold",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
+  role: "Aspiring DevOps Engineer & Fullstack Developer | M.Sc. Student",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "fabian.weighold@s2023.tu-chemnitz.de",
+  location: "Europe/Berlin", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "German"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
@@ -30,17 +30,12 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/podev23",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.linkedin.com/in/fweighold/",
   },
   {
     name: "Email",
@@ -63,7 +58,7 @@ const home = {
   },
   subline: (
     <>
-      I'm Selene, a design engineer at <Logo icon="/trademarks/wordmark-dark.svg" style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive
+      I'm Fabian, a software engineer at <Logo icon="/trademarks/wordmark-dark.svg" style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive
       <br /> user experiences. After hours, I build my own projects.
     </>
   ),
@@ -90,9 +85,13 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Ich bin derzeit als Werkstudent im Bereich Fullstack Webentwicklung tätig und arbeite an der Schnittstelle von Frontend- und Backend-Technologien in einem agilen Teamumfeld.<br />
+        <br />
+        Parallel erweitere ich meine Kenntnisse im Bereich Cloud-Architektur, indem ich ein Zertifizierungsprogramm zum Cloud Solution Architect absolviere.<br />
+        <br />
+        Als eingeschriebener Masterstudent im Studiengang Automotive Software Engineering (geplant: Wechsel zu Web Engineering) bringe ich fundiertes technisches Verständnis mit, das ich gezielt auf moderne Web-, Cloud- und DevOps-Technologien anwende.<br />
+        <br />
+        Mein mittelfristiges Ziel ist eine Position im Bereich DevOps Engineering, wo ich meine Fähigkeiten in Automation, CI/CD, Cloud-Infrastruktur und Softwarebetrieb weiter ausbauen und anwenden möchte. Ich interessiere mich besonders für ganzheitliche Systemarchitekturen, effiziente Deployment-Prozesse und stabile, skalierbare Infrastrukturen.
       </>
     ),
   },
@@ -101,13 +100,13 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Porsche Leipzig GmbH",
+        timeframe: "2023 - Present",
+        role: "Fullstack Developer intern",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Developed a web application which automates the process of comparing a measureing system with a reference system, resulting in a 50% increase in user
+            engagement for the whole process.
           </>,
           <>
             Spearheaded the integration of AI tools into design workflows, enabling designers to
@@ -147,12 +146,12 @@ const about = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Technische Universität Chemnitz",
+        description: <>Master degree in automotive software engineering.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Hochschule Mittweida",
+        description: <>Bachelors degreee in mechanical engineering.</>,
       },
     ],
   },
@@ -161,8 +160,36 @@ const about = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+        title: "Next.js",
+        description: <>Mit Next.js habe ich eine Webanwendung für mein Fußballteam entwickelt, die zur Organisation von Spielterminen und Teamkommunikation dient. Die App enthält auch spielerische Elemente zur Motivation.
+        Dabei konnte ich praktische Erfahrung mit Fullstack-Entwicklung, API-Routen, SSR und dem Deployment über Vercel sammeln.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/cover-04.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "NestJS",
+        description: <>Im Rahmen eines Uni-Projekts habe ich mit NestJS eine Microservice-Architektur mit vier Services und einem API-Gateway umgesetzt. Mithilfe von Docker konnte ich die gesamte Infrastruktur lokal und in der Cloud (AWS) für Demozwecke betreiben und testen.
+Dabei sammelte ich praktische Erfahrung mit verteilten Systemen, Interservice-Kommunikation (TCP), API-Gateway-Routing und Cloud-Deployment.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/cover-04.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "Plotly Dash",
+        description: <>Mit Plotly Dash entwickle ich datengetriebene Webanwendungen in Python – ideal für Prototyping, Datenanalyse, Dashboards und die Visualisierung komplexer Zusammenhänge in interaktiven Interfaces.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
@@ -173,19 +200,6 @@ const about = {
           },
           {
             src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
             alt: "Project image",
             width: 16,
             height: 9,
