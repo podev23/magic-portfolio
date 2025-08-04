@@ -12,6 +12,7 @@ import {
   Meta,
   Schema
 } from "@once-ui-system/core";
+import { iconLibrary } from "@/resources/icons";
 import { baseURL, about, person, social } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
@@ -226,17 +227,29 @@ export default function About() {
                             minWidth={image.width}
                             //@ts-ignore
                             height={image.height}
+                            vertical="center"
+                            horizontal="center"
+                            padding="m"
                           >
-                            <Media
-                              enlarge
-                              radius="m"
-                              //@ts-ignore
-                              sizes={image.width.toString()}
-                              //@ts-ignore
-                              alt={image.alt}
-                              //@ts-ignore
-                              src={image.src}
-                            />
+                            {/* @ts-ignore */}
+                            {(image as any).isIcon ? (
+                              <Icon
+                                name={(image as any).src as keyof typeof iconLibrary}
+                                size="xl"
+                                onBackground="brand-weak"
+                              />
+                            ) : (
+                              <Media
+                                enlarge
+                                radius="m"
+                                //@ts-ignore
+                                sizes={image.width.toString()}
+                                //@ts-ignore
+                                alt={image.alt}
+                                //@ts-ignore
+                                src={image.src}
+                              />
+                            )}
                           </Flex>
                         ))}
                       </Flex>
@@ -295,17 +308,29 @@ export default function About() {
                             minWidth={image.width}
                             //@ts-ignore
                             height={image.height}
+                            vertical="center"
+                            horizontal="center"
+                            padding="m"
                           >
-                            <Media
-                              enlarge
-                              radius="m"
-                              //@ts-ignore
-                              sizes={image.width.toString()}
-                              //@ts-ignore
-                              alt={image.alt}
-                              //@ts-ignore
-                              src={image.src}
-                            />
+                            {/* @ts-ignore */}
+                            {(image as any).isIcon ? (
+                              <Icon
+                                name={(image as any).src as keyof typeof iconLibrary}
+                                size="xl"
+                                onBackground="brand-weak"
+                              />
+                            ) : (
+                              <Media
+                                enlarge
+                                radius="m"
+                                //@ts-ignore
+                                sizes={image.width.toString()}
+                                //@ts-ignore
+                                alt={image.alt}
+                                //@ts-ignore
+                                src={image.src}
+                              />
+                            )}
                           </Flex>
                         ))}
                       </Flex>

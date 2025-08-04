@@ -24,6 +24,9 @@ import {
 
 import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads } from "react-icons/fa6";
 
+// Technologie-spezifische Icons
+import { SiNextdotjs, SiNestjs, SiPlotly, SiDocker, SiKubernetes, SiGrafana, SiPrometheus } from "react-icons/si";
+
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
   arrowRight: HiArrowRight,
@@ -45,7 +48,15 @@ export const iconLibrary: Record<string, IconType> = {
   threads: FaThreads,
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
   document: HiOutlineDocument,
-  rocket: HiOutlineRocketLaunch
+  rocket: HiOutlineRocketLaunch,
+  // Technologie-Logos
+  nextjs: SiNextdotjs,
+  nestjs: SiNestjs,
+  plotly: SiPlotly,
+  docker: SiDocker,
+  kubernetes: SiKubernetes,
+  grafana: SiGrafana,
+  prometheus: SiPrometheus
 };
 
 export type IconLibrary = typeof iconLibrary;

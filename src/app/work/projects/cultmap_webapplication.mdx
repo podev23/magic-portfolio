@@ -1,0 +1,50 @@
+---
+title: "Building CultMap, a culutrell optimized Web application"
+publishedAt: "2024-04-08"
+summary: "Development of a webapplication enrich people to share and create culturell routes in saxony."
+images:
+  - "/images/projects/cultmap-project/cultmap_architecture.png"
+  - "/images/projects/cultmap-project/map_page.jpeg"
+  - "/images/projects/cultmap-project/route_detail.jpeg"
+  - "/images/projects/cultmap-project/route.jpeg"
+team:
+  - name: "Fabian Weighold"
+    role: "Software Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/fweighold/"
+---
+
+## Überblick
+
+Entwicklung einer Microservice-Architektur für das CultMap-Projekt. Ziel war es, eine skalierbare, modulare und cloudfähige Plattform zu schaffen, die verschiedene Services wie Authentifizierung, Kernlogik, Spielmechanik, Caching und API-Gateway umfasst. Die Services sind lose gekoppelt und kommunizieren über TCP und HTTP.
+
+## Zentrale Funktionen
+
+- **Microservice-Architektur:** Klare Trennung der Verantwortlichkeiten in eigenständige Services (Auth, Core, Game, Cache, Gateway)
+- **Dockerisierung:** Alle Services laufen in isolierten Containern, was eine einfache Entwicklung, Testing und Deployment ermöglicht
+- **Automatisiertes Setup:** Ein zentrales Bash-Script baut und startet alle Services, inklusive Hot Reload und Statusanzeige
+- **Cloud- und Datenbankintegration:** Unterstützung für PostgreSQL, MongoDB, Amazon S3 und Upstash Redis
+- **Flexible Entwicklung:** Services können einzeln oder gemeinsam gestartet werden, lokale und Docker-basierte Entwicklung möglich
+- **Health Checks & Monitoring:** Integrierte Endpunkte und Mechanismen zur Überwachung und Fehlerbehandlung
+
+## Eingesetzte Technologien
+
+- **NestJS:** Backend-Framework für alle Services
+- **Docker & Docker Compose:** Containerisierung und Orchestrierung
+- **PostgreSQL & MongoDB:** Persistente Datenspeicherung
+- **Amazon S3:** Speicherung von Bildern im GameService
+- **Upstash Redis:** Caching für Performance-Optimierung
+- **JWT:** Authentifizierung und Autorisierung
+- **Swagger:** Automatisierte API-Dokumentation
+
+## Herausforderungen & Learnings
+
+- **Service-Kommunikation:** Die zuverlässige Kommunikation über TCP und HTTP zwischen den Services erforderte ein durchdachtes Fehler- und Verbindungsmanagement
+- **Umgebungsvariablen & Konfiguration:** Die Vielzahl an Services und Umgebungen machte ein sauberes .env-Management und Dokumentation notwendig
+- **Docker für Entwicklung & Produktion:** Unterschiedliche Anforderungen an Hot Reload, Persistenz und Netzwerk mussten für beide Szenarien gelöst werden
+- **Skalierbarkeit & Modularität:** Die Architektur wurde so gestaltet, dass neue Services einfach ergänzt und bestehende unabhängig weiterentwickelt werden können
+- **Automatisierung:** Das zentrale Build- und Start-Script vereinfacht die Handhabung, reduziert Fehlerquellen und beschleunigt das Onboarding neuer Entwickler
+
+## Ergebnis
+
+Das System ermöglicht eine flexible, skalierbare und wartbare Weiterentwicklung des CultMap-Projekts. Die Microservice-Architektur sorgt für klare Verantwortlichkeiten, bessere Fehlertoleranz und eine zukunftssichere Basis für neue Features.

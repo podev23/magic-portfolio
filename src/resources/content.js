@@ -49,12 +49,12 @@ const home = {
   image: "/images/og/home.jpg",
   label: "Home",
   title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  description: `A microservices architecture based web application showcasing web technologies and databases. ${person.role}`,
+  headline: <>Building bridges web and databases</>,
   featured: {
     display: true,
-    title: <>Recent project: <strong className="ml-4">Once UI</strong></>,
-    href: "/work/building-once-ui-a-customizable-design-system",
+    title: <>Recent project: <strong className="ml-4">CultMap</strong></>,
+    href: "/work/cultmap_webapplication",
   },
   subline: (
     <>
@@ -115,6 +115,7 @@ const about = {
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
+          // Format: { src: string, alt: string, width: number, height: number, isIcon?: boolean }
         ],
       },
       {
@@ -154,16 +155,73 @@ const about = {
     title: "Technical skills",
     skills: [
       {
+        title: "Docker",
+        description: <>Mit Docker containerisiere ich Anwendungen für konsistente Deployment-Umgebungen. Ich nutze Docker Compose für Multi-Container-Anwendungen und habe Erfahrung mit der Erstellung von optimierten Images für verschiedene Anwendungsfälle.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "docker",
+            alt: "Docker Logo",
+            width: 16,
+            height: 9,
+            isIcon: true,
+          },
+        ],
+      },
+      {
+        title: "Kubernetes",
+        description: <>Ich arbeite mit Kubernetes für die Orchestrierung von Container-Anwendungen und das Management von Microservices. Dabei sammle ich Erfahrung mit Pod-Management, Service-Discovery und der Skalierung von Anwendungen in Cloud-Umgebungen.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "kubernetes",
+            alt: "Kubernetes Logo",
+            width: 16,
+            height: 9,
+            isIcon: true,
+          },
+        ],
+      },
+      {
+        title: "Grafana",
+        description: <>Mit Grafana erstelle ich aussagekräftige Dashboards für die Überwachung und Visualisierung von Metriken. Ich konfiguriere Datenquellen, erstelle benutzerdefinierte Panels und entwickle Alerting-Regeln für proaktive Systemüberwachung.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "grafana",
+            alt: "Grafana Logo",
+            width: 16,
+            height: 9,
+            isIcon: true,
+          },
+        ],
+      },
+      {
+        title: "Prometheus",
+        description: <>Ich nutze Prometheus für das Sammeln und Speichern von Metriken sowie das Monitoring von Anwendungen und Infrastruktur. Dabei konfiguriere ich Exporters, erstelle PromQL-Queries und implementiere benutzerdefinierte Metriken für umfassende Systemüberwachung.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "prometheus",
+            alt: "Prometheus Logo",
+            width: 16,
+            height: 9,
+            isIcon: true,
+          },
+        ],
+      },
+      {
         title: "Next.js",
         description: <>Mit Next.js habe ich eine Webanwendung für mein Fußballteam entwickelt, die zur Organisation von Spielterminen und Teamkommunikation dient. Die App enthält auch spielerische Elemente zur Motivation.
         Dabei konnte ich praktische Erfahrung mit Fullstack-Entwicklung, API-Routen, SSR und dem Deployment über Vercel sammeln.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
+            src: "nextjs",
+            alt: "Next.js Logo",
             width: 16,
             height: 9,
+            isIcon: true,
           },
         ],
       },
@@ -174,10 +232,11 @@ Dabei sammelte ich praktische Erfahrung mit verteilten Systemen, Interservice-Ko
         // optional: leave the array empty if you don't want to display images
         images: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
+            src: "nestjs",
+            alt: "NestJS Logo",
             width: 16,
             height: 9,
+            isIcon: true,
           },
         ],
       },
@@ -187,16 +246,11 @@ Dabei sammelte ich praktische Erfahrung mit verteilten Systemen, Interservice-Ko
         // optional: leave the array empty if you don't want to display images
         images: [
           {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
+            src: "plotly",
+            alt: "Plotly Dash Logo",
             width: 16,
             height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            isIcon: true,
           },
         ],
       },
