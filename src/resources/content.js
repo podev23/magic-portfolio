@@ -115,16 +115,10 @@ const about = {
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
         ],
       },
       {
-        company: "Creativ3",
+        company: "ICM - Institut Chemnitzer Maschinen und Anlagen e.V.",
         timeframe: "2018 - 2022",
         role: "Lead Designer",
         achievements: [

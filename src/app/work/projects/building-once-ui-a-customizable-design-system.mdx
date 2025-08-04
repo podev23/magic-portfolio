@@ -1,45 +1,49 @@
 ---
-title: "Building Once UI, a Customizable Design System"
+title: "Building CultMap, a culutrell optimized Web application"
 publishedAt: "2024-04-08"
-summary: "Development of a flexible and highly customizable design system using Next.js for front-end and Figma for design collaboration."
+summary: "Development of a webapplication enrich people to share and create culturell routes in saxony."
 images:
-  - "/images/projects/project-01/cover-01.jpg"
-  - "/images/projects/project-01/cover-02.jpg"
-  - "/images/projects/project-01/cover-03.jpg"
-  - "/images/projects/project-01/cover-04.jpg"
+  - "/images/projects/cultmap-project/map_page.jpeg"
+  - "/images/projects/cultmap-project/route_detail.jpeg"
+  - "/images/projects/cultmap-project/route.jpeg"
 team:
   - name: "Selene Yu"
     role: "Software Engineer"
     avatar: "/images/avatar.jpg"
     linkedIn: "https://www.linkedin.com/company/once-ui/"
-  - name: "Jane Smith"
-    role: "Product Manager"
-    avatar: "/images/projects/project-01/avatar-01.jpg"
-    linkedIn: "https://www.linkedin.com/company/once-ui/"
 ---
 
-## Overview
+## Überblick
 
-Development of a flexible and highly customizable design system using Next.js for front-end and Figma for design collaboration.
+Entwicklung einer Microservice-Architektur für das CultMap-Projekt. Ziel war es, eine skalierbare, modulare und cloudfähige Plattform zu schaffen, die verschiedene Services wie Authentifizierung, Kernlogik, Spielmechanik, Caching und API-Gateway umfasst. Die Services sind lose gekoppelt und kommunizieren über TCP und HTTP.
 
-## Key Features
+## Zentrale Funktionen
 
-- **Component Library**: Built a set of modular, reusable UI components using React and styled-components in Next.js, focusing on accessibility and responsiveness.
-- **Theming and Customization**: Integrated a theming system that allows easy switching and customization of color palettes, typography, and layout styles using CSS variables and Figma tokens.
-- **Figma Integration**: Collaborated closely with designers by setting up a shared design library in Figma. This library was synchronized with the codebase, ensuring design handoffs were seamless and that design tokens remained consistent across both platforms.
-- **Documentation and Usage Guidelines**: Developed comprehensive documentation with Storybook to showcase components, usage patterns, and best practices, ensuring the design system is easy to adopt by other teams.
+- **Microservice-Architektur:** Klare Trennung der Verantwortlichkeiten in eigenständige Services (Auth, Core, Game, Cache, Gateway)
+- **Dockerisierung:** Alle Services laufen in isolierten Containern, was eine einfache Entwicklung, Testing und Deployment ermöglicht
+- **Automatisiertes Setup:** Ein zentrales Bash-Script baut und startet alle Services, inklusive Hot Reload und Statusanzeige
+- **Cloud- und Datenbankintegration:** Unterstützung für PostgreSQL, MongoDB, Amazon S3 und Upstash Redis
+- **Flexible Entwicklung:** Services können einzeln oder gemeinsam gestartet werden, lokale und Docker-basierte Entwicklung möglich
+- **Health Checks & Monitoring:** Integrierte Endpunkte und Mechanismen zur Überwachung und Fehlerbehandlung
 
-## Technologies Used
+## Eingesetzte Technologien
 
-- **Next.js**: For fast, server-rendered React applications.
-- **Figma**: For creating and managing design assets and prototypes.
-- **Styled-Components**: For styling React components with a modular, themable approach.
-- **Storybook**: For building an interactive, documented component library.
+- **NestJS:** Backend-Framework für alle Services
+- **Docker & Docker Compose:** Containerisierung und Orchestrierung
+- **PostgreSQL & MongoDB:** Persistente Datenspeicherung
+- **Amazon S3:** Speicherung von Bildern im GameService
+- **Upstash Redis:** Caching für Performance-Optimierung
+- **JWT:** Authentifizierung und Autorisierung
+- **Swagger:** Automatisierte API-Dokumentation
 
-## Challenges and Learnings
+## Herausforderungen & Learnings
 
-One key challenge was balancing the need for flexibility with the desire to maintain design consistency. The solution involved creating well-defined design tokens and establishing clear guidelines for when and how components could be customized. Additionally, setting up effective collaboration workflows between designers and developers using Figma and Git was a learning experience that greatly improved the process.
+- **Service-Kommunikation:** Die zuverlässige Kommunikation über TCP und HTTP zwischen den Services erforderte ein durchdachtes Fehler- und Verbindungsmanagement
+- **Umgebungsvariablen & Konfiguration:** Die Vielzahl an Services und Umgebungen machte ein sauberes .env-Management und Dokumentation notwendig
+- **Docker für Entwicklung & Produktion:** Unterschiedliche Anforderungen an Hot Reload, Persistenz und Netzwerk mussten für beide Szenarien gelöst werden
+- **Skalierbarkeit & Modularität:** Die Architektur wurde so gestaltet, dass neue Services einfach ergänzt und bestehende unabhängig weiterentwickelt werden können
+- **Automatisierung:** Das zentrale Build- und Start-Script vereinfacht die Handhabung, reduziert Fehlerquellen und beschleunigt das Onboarding neuer Entwickler
 
-## Outcome
+## Ergebnis
 
-The design system is now actively used across multiple projects, leading to faster development cycles, fewer design inconsistencies, and improved collaboration between design and development teams. It has become a foundation for scaling our products efficiently while ensuring a cohesive user experience.
+Das System ermöglicht eine flexible, skalierbare und wartbare Weiterentwicklung des CultMap-Projekts. Die Microservice-Architektur sorgt für klare Verantwortlichkeiten, bessere Fehlertoleranz und eine zukunftssichere Basis für neue Features.
