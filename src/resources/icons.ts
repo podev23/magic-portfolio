@@ -25,7 +25,7 @@ import {
 import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads } from "react-icons/fa6";
 
 // Technologie-spezifische Icons
-import { SiNextdotjs, SiNestjs, SiPlotly, SiDocker, SiKubernetes, SiGrafana, SiPrometheus } from "react-icons/si";
+import { SiNextdotjs, SiNestjs, SiPlotly, SiDocker, SiKubernetes, SiGrafana, SiPrometheus, SiGithub, SiGitlab } from "react-icons/si";
 
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
@@ -56,7 +56,9 @@ export const iconLibrary: Record<string, IconType> = {
   docker: SiDocker,
   kubernetes: SiKubernetes,
   grafana: SiGrafana,
-  prometheus: SiPrometheus
+  prometheus: SiPrometheus,
+  github: SiGithub,
+  gitlab: SiGitlab
 };
 
 export type IconLibrary = typeof iconLibrary;

@@ -50,7 +50,7 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `A microservices architecture based web application showcasing web technologies and databases. ${person.role}`,
-  headline: <>Building bridges web and databases</>,
+  headline: <>Schnittstelle zwischen Entwicklung und Betrieb mit der Ausrichtung zur Cloud.</>,
   featured: {
     display: true,
     title: <>Recent project: <strong className="ml-4">CultMap</strong></>,
@@ -58,8 +58,8 @@ const home = {
   },
   subline: (
     <>
-      I'm Fabian, a software engineer at <Logo icon="/trademarks/wordmark-dark.svg" style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+       Ich bin Fabian Weighold , Fullstack trainee.
+      <br /> Mit Fokus auf DevOps und Cloud setze ich auf Automatisierung und den Aufbau moderner, skalierbarer Systeme.
     </>
   ),
 };
@@ -204,6 +204,48 @@ const about = {
           {
             src: "prometheus",
             alt: "Prometheus Logo",
+            width: 16,
+            height: 9,
+            isIcon: true,
+          },
+        ],
+      },
+      {
+        title: "GitHub",
+        description: <>Ich nutze GitHub für die Versionskontrolle und kollaborative Softwareentwicklung. Dabei arbeite ich mit Git-Workflows, Pull Requests, Code Reviews und der Integration von GitHub Actions für automatisierte Build- und Test-Prozesse.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "github",
+            alt: "GitHub Logo",
+            width: 16,
+            height: 9,
+            isIcon: true,
+          },
+        ],
+      },
+      {
+        title: "GitLab",
+        description: <>Mit GitLab arbeite ich in Unternehmensumgebungen für die Versionskontrolle und das Management von Code-Repositories. Ich nutze GitLab's integrierte Features für Issue-Tracking, Wiki-Dokumentation und kollaborative Entwicklung.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "gitlab",
+            alt: "GitLab Logo",
+            width: 16,
+            height: 9,
+            isIcon: true,
+          },
+        ],
+      },
+      {
+        title: "GitLab CI/CD",
+        description: <>Ich konfiguriere und optimiere GitLab CI/CD-Pipelines für automatisierte Build-, Test- und Deployment-Prozesse. Dabei erstelle ich .gitlab-ci.yml-Dateien, definiere Stages, Jobs und implementiere Deployment-Strategien für verschiedene Umgebungen.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "gitlab",
+            alt: "GitLab CI/CD Logo",
             width: 16,
             height: 9,
             isIcon: true,
