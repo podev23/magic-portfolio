@@ -57,7 +57,6 @@ export const iconLibrary: Record<string, IconType> = {
   kubernetes: SiKubernetes,
   grafana: SiGrafana,
   prometheus: SiPrometheus,
-  github: SiGithub,
   gitlab: SiGitlab
 };
 

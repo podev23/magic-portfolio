@@ -50,7 +50,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
       {structure
         .filter((section) => section.display)
         .map((section, sectionIndex) => (
-          <Column key={sectionIndex} gap="12">
+          <Column key={`section-${section.title}-${sectionIndex}`} gap="12">
             <Flex
               cursor="interactive"
               className={styles.hover}
@@ -66,7 +66,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
                 {section.items.map((item, itemIndex) => (
                   <Flex
                     hide="l"
-                    key={itemIndex}
+                    key={`item-${section.title}-${item}-${itemIndex}`}
                     style={{ cursor: "pointer" }}
                     className={styles.hover}
                     gap="12"

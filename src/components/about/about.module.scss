@@ -14,6 +14,147 @@
     top: var(--static-space-64);
 }
 
+// Skills Grid Layout
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+    max-width: 100%;
+}
+
+.skillEmblem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+    max-width: 120px;
+    position: relative;
+}
+
+.emblemButton {
+    background: none;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.2s ease;
+    width: 100%;
+    min-height: 80px;
+    justify-content: center;
+}
+
+.emblemButton:hover {
+    transform: scale(1.05);
+    border-color: var(--color-neutral-medium);
+    background-color: var(--color-neutral-alpha-weak);
+}
+
+.emblemButton.active {
+    border-color: var(--color-brand-strong);
+    background-color: var(--color-brand-alpha-weak);
+    transform: scale(1.02);
+}
+
+.skillLabel {
+    margin-top: 8px;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: var(--color-neutral-strong);
+    text-align: center;
+    line-height: 1.2;
+}
+
+.skillLabel:hover {
+    color: var(--color-neutral-strong);
+}
+
+/* Dark mode specific styles */
+@media (prefers-color-scheme: dark) {
+    .skillLabel {
+        color: #e5e7eb; /* Light gray for dark mode */
+    }
+}
+
+/* Light mode specific styles */
+@media (prefers-color-scheme: light) {
+    .skillLabel {
+        color: #1f2937; /* Dunkleres Grau für Light Mode */
+    }
+}
+
+.placeholderIcon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: var(--color-neutral-alpha-medium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--color-neutral-strong);
+    font-size: 14px;
+}
+
+.skillDesc {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-surface-strong);
+    border: 1px solid var(--color-neutral-medium);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 12px;
+    max-width: 320px;
+    min-width: 280px;
+    z-index: 100;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--color-neutral-alpha-medium);
+    color: var(--color-neutral-strong);
+}
+
+.skillDesc p {
+    color: var(--color-neutral-strong);
+    margin: 0;
+}
+
+.skillDesc strong {
+    color: var(--color-neutral-strong);
+}
+
+.skillDesc::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--color-surface-strong);
+}
+
+.skillDesc::after {
+    content: '';
+    position: absolute;
+    bottom: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--color-neutral-alpha-medium);
+    z-index: -1;
+}
+
 @media (max-width: breakpoints.$s) {
     .avatar {
         top: auto;
@@ -25,5 +166,33 @@
 
     .blockAlign {
         align-self: center;
+    }
+
+    .skillsGrid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 12px;
+    }
+
+    .skillDesc {
+        max-width: 280px;
+        min-width: 240px;
+        left: 0;
+        transform: none;
+        padding: 16px;
+        bottom: 100%;
+        margin-bottom: 12px;
+    }
+
+    .skillDesc::before,
+    .skillDesc::after {
+        left: 20px;
+        transform: none;
+        bottom: -8px;
+        border-top: 8px solid var(--color-surface-strong);
+    }
+
+    .skillDesc::after {
+        bottom: -9px;
+        border-top: 8px solid var(--color-neutral-alpha-medium);
     }
 }
