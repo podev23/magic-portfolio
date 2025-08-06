@@ -82,7 +82,7 @@ const about = {
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "Über mich",
     description: (
       <>
         Ich bin derzeit als Werkstudent im Bereich Fullstack Webentwicklung tätig und arbeite an der Schnittstelle von Frontend- und Backend-Technologien in einem agilen Teamumfeld.<br />
@@ -97,7 +97,7 @@ const about = {
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Erfahrungen",
     experiences: [
       {
         company: "Porsche Leipzig GmbH",
@@ -138,7 +138,7 @@ const about = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Bildung",
     institutions: [
       {
         name: "Technische Universität Chemnitz",
@@ -369,4 +369,11 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+const certificates = {
+  path: "/certificates",
+  label: "Zertifikate",
+  title: `Zertifikate & Fähigkeiten – ${person.name}`,
+  description: `Erworbene Zertifikate und nachgewiesene Fähigkeiten von ${person.name}`,
+};
+
+export { person, social, newsletter, home, about, blog, work, gallery, certificates };
