@@ -15,7 +15,7 @@ export function CertificatesList() {
         <ProjectCard
           priority={index < 2}
           key={cert.slug}
-          href={`certificates/${cert.slug}`}
+          href={`/certificates/${cert.slug}`}
           images={cert.metadata.images}
           title={cert.metadata.title}
           description={cert.metadata.summary}
