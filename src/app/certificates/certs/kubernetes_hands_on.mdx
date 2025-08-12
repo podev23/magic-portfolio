@@ -1,11 +1,77 @@
 ---
 title: "Kubernetes Hands-on Tutorial"
 issuer: "Udemy"
-publishedAt: "2022-11-15"
+publishedAt: "2025-07-15"
 summary: "Praktischer Einstieg in Kubernetes: Pod-Management, Services, Deployments und Skalierung in der Cloud."
 images:
   - "/images/projects/cultmap-project/cultmap_architecture.png"
-link: "https://www.udemy.com/course/kubernetes-microservices/?couponCode=MT40825"
+link: "https://www.udemy.com/course/kubernetes-microservices"
 ---
 
-Das Hands-on Tutorial vermittelte mir praxisnahe Kenntnisse in der Orchestrierung von Containern mit Kubernetes. Ich habe Deployments, Services, ConfigMaps und Skalierungsstrategien umgesetzt und die Grundlagen für produktionsreife Cluster gelegt.
+Im Udemy-Kurs „Kubernetes Hands‑on – Deploy Microservices to the AWS Cloud“ habe ich Schritt für Schritt gelernt, eine Microservices‑Anwendung sicher und reproduzierbar auf Kubernetes zu betreiben – vom lokalen Cluster bis zur Cloud (AWS EKS/Kops). Der Kurs folgt einem klaren roten Faden: Grundlagen verstehen, Arbeitslasten bereitstellen, Sichtbarkeit und Stabilität herstellen, Produktions‑praktiken einführen und schließlich CI/CD und Packaging professionalisieren.
+
+## Grundlagen und lokale Umgebung
+- Installation und Start von Clustern lokal (Docker Desktop, Minikube) inklusive Treiberwahl und Ressourcen‑Sizing.
+- Container‑Basics mit DockerHub und Images; Ausführen erster Container als Grundlage für Pods.
+- Schreiben und Anwenden von YAML‑Manifests für `Pod`, `Service`, `ReplicaSet` und `Deployment`.
+- Service‑Typen verstehen: `ClusterIP` vs. `NodePort`; Pod‑Selektion mittels Labels/Selectors.
+- Rollouts/Rollbacks mit Deployments, Versionierung und kontrollierte Updates.
+
+## Netzwerke, Namespaces und Service Discovery
+- Kubernetes‑Netzwerkmodell, `kube-system`‑Namespace, DNS‑Pods und FQDNs in Services.
+- Zugriffe innerhalb des Clusters (z. B. auf MySQL) und Namensauflösung für Microservices.
+
+## Microservices‑Projekt (Fleetman)
+- Schrittweises Deployment der Services: Message Queue (ActiveMQ), Position Simulator, Position Tracker, API‑Gateway und Web‑App.
+- Arbeiten mit Logs und `kubectl logs`, um Verhalten und Fehlerbilder zu verstehen.
+
+## Persistenz und Storage
+- Persistenzkonzepte: Volumes, `PersistentVolume`/`PersistentVolumeClaim`, `StorageClass` und Binding.
+- Betrieb einer Datenbank (MongoDB) als Pod/Stateful Workload inklusive Volume‑Mounts und Upgrade auf persistente Storage‑Backends.
+- Kapazitätsanpassung lokaler Cluster (Minikube) für stateful Workloads.
+
+## Cluster in der Cloud (AWS)
+- Cluster‑Provisionierung mit Kops und EKS (inkl. `eksctl`, AWS CLI, Credentials, Instanztypen).
+- Betriebsszenarien: Domain‑Name/Ingress, Load Balancers, Replikation und Fehlertoleranz bei Node‑Ausfällen.
+- Lifecycle: Starten, Neustarten und sicheres Löschen von Clustern; kurzer Ausblick auf GCP Deployment.
+
+## Logging, Monitoring und Alerts
+- ELK/Elastic Stack: Installation, Kibana‑Dashboards, Filter und Fehleranalysen.
+- Prometheus Operator (`kube-prometheus-stack`) und Grafana: Metriken, Dashboards, Classic UI.
+- Alerting mit Alertmanager: Konfiguration, Slack‑Integration, Umgang mit „Firing“ Alerts, Watchdog, optional PagerDuty.
+
+## Stabilität, Ressourcen und Scheduling
+- Ressourcenmanagement: Memory/CPU Requests & Limits, Aktivierung des Metrics‑Servers.
+- Readiness/Liveness‑Probes und warum sie für Rolling Updates und Stabilität essenziell sind.
+- Scheduler‑Konzepte: QoS‑Klassen, Evictions, Pod‑Prioritäten und deren Einfluss im Betrieb.
+- Autoscaling (HPA) auf Basis von Metriken; Tuning von Java/Spring Boot (Heap‑Begrenzung) als Praxisbeispiel.
+
+## Konfiguration und Sicherheit
+- `ConfigMap` erstellen und konsumieren (als Umgebungsvariablen, per `envFrom`, als Volume);
+  optional Hot‑Reload mit Spring Cloud Kubernetes.
+- `Secret`‑Management und sicheres Injizieren sensibler Konfiguration.
+
+## Ingress und Traffic Management
+- Ingress‑Controller, Routing‑Regeln, Tests und TLS‑Termination (Load Balancer/Cloud).
+
+## Workload‑Typen über Deployments hinaus
+- Batch‑ und Cron‑Jobs, `DaemonSet` für Node‑weite Agents, `StatefulSet` für replizierte Datenbanken (z. B. Mongo‑Replica‑Set) und Skalierung.
+
+## CI/CD und Packaging (Jenkins & Helm)
+- Jenkins‑Grundsetup, Multibranch Pipelines, GitHub‑Organisation, PATs und gängige Fehlerbilder.
+- Kontinuierliche Deployments in den Cluster.
+- Helm im praktischen Einsatz: Charts finden/installieren, `values.yaml` anpassen, „Snowflake“‑Cluster vermeiden.
+- Fortgeschritten: `helm pull`, `helm template`, Go‑Templates, Funktionen/Pipelines, Named Templates und das Lesen professioneller Charts.
+
+### Neue Fähigkeiten, die ich nun gezielt einbringen kann
+- Planung und Betrieb von Kubernetes‑Umgebungen lokal und in AWS (EKS/Kops).
+- Modellierung von Workloads mit Pods, ReplicaSets, Deployments und Statefull Workloads; kontrollierte Rollouts/Rollbacks.
+- Service‑Topologien und Service Discovery (DNS/FQDN), Ingress‑Design inkl. TLS‑Termination.
+- Persistenzdesign mit PV/PVC/StorageClasses; sichere Datenpfade für Datenbanken.
+- Observability‑Stack aufsetzen (ELK, Prometheus, Grafana) inklusive alarmierbarer Metriken und Alert‑Routing (Slack/PagerDuty).
+- Produktionsreife Resilienz: Probes, Ressourcen‑Requests/Limits, QoS/Preemption, Autoscaling.
+- Sichere Konfiguration mittels ConfigMaps/Secrets; konsistente Environments für Dev/Staging/Prod.
+- Aufbau von CI/CD‑Pipelines (Jenkins + GitHub) und deploymentsichere Artefakt‑Lieferung.
+- Packaging und Wiederverwendung mit Helm (Chart‑Anpassungen, Templating, Values‑Strategien).
+
+Diese Inhalte habe ich praxisnah anhand eines vollständigen Microservices‑Systems umgesetzt und bin in der Lage, Anwendungen reproduzierbar zu deployen, zu skalieren, zu überwachen und betrieblich abzusichern – von der lokalen Entwicklung bis zur produktionsnahen Cloud‑Umgebung.

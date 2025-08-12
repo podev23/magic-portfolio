@@ -1,11 +1,60 @@
 ---
 title: "AWS Certified Solutions Architect"
 issuer: "Udacity"
-publishedAt: "2023-05-01"
+publishedAt: "2025-10-01"
 summary: "Intensives Cloud-Architektur-Programm mit Fokus auf AWS-Services, Skalierung, Sicherheit und Best Practices."
 images:
   - "/images/projects/cultmap-project/cultmap_architecture.png"
 link: "https://s3-us-west-2.amazonaws.com/udacity-printer/production/syllabus/syllabus-nd063-default-en-us.pdf"
 ---
 
-Im Rahmen dieses Programms habe ich praktische Erfahrung mit AWS-Architekturen, IAM, VPC, EC2, S3, RDS, Load Balancing und Cloud-Security gesammelt. Das Zertifikat bestätigt meine Fähigkeit, skalierbare und sichere Cloud-Lösungen zu entwerfen und umzusetzen.
+Im Udacity‑Programm zum „AWS Cloud Architect“ habe ich gelernt, hochverfügbare, skalierbare und sichere Cloud‑Architekturen auf AWS zu planen, zu entwerfen und produktionsnah umzusetzen. Der Lehrplan führt von Verfügbarkeit/Resilienz über Performance/Kosten bis hin zu Security by Design – inklusive Projekten, in denen ich belastbare, beobachtbare und kosteneffiziente Infrastruktur aufgebaut habe.
+
+## Grundlagen, Voraussetzungen und Werkzeuge
+- Voraussetzungen: Web‑Entwicklung, objektorientierte Programmierung, Linux‑Shell‑Basics und praktische Erfahrung mit Compute/Netzwerk/Storage/DB in AWS.
+- Tools im Einsatz: AWS CLI, Terraform (Infrastructure as Code), GitHub, Travis CI, DockerHub, Python. Routiniert in Linux‑Kommandos (ssh, sed/awk, systemd/journal, Paketmanager) für Automatisierung und Diagnose.
+
+## Design für Availability, Reliability & Resiliency
+- Verständnis von AWS Regions und Availability Zones für georedundante, fehlertolerante Systeme.
+- Resilienz auf Service‑Ebene: Entwurf nativer und nicht‑nativer Services mit Fokus auf Ausfallsicherheit, Self‑Healing und Wiederanlauf.
+- Ableitung von Business Objectives (SLO/SLI/RPO/RTO) und Abgleich mit technischen Maßnahmen.
+- „Monitor, React, Recover“: Observability‑Strategien und Wiederherstellungspfade für Störfälle.
+
+## Design für Performance, Skalierung & Kosten
+- Kostenmodell und Cloud FinOps‑Grundlagen: Kosten messen, Alerts/Reports etablieren, Reservierungen/Savings Plans bewerten.
+- Performance‑Optimierung und Right‑Sizing von Ressourcen; horizontale/vertikale Skalierung, Caching, asynchrone Verarbeitung.
+- Infrastructure as Code mit Terraform: Wiederholbare Provisionierung, Modulisierung, Variablen/Workspaces, Remote State.
+- Serverless‑Architektur: Ereignisgetriebene Systeme kosteneffizient und elastisch betreiben.
+
+## Security by Design
+- Sicherer Zugang zu Cloud‑Diensten: Prinzip der minimalen Rechte (Least Privilege), Identitätsföderation, kurzlebige Credentials.
+- Schutz der Infrastruktur: Netzwerksegmentierung, Egress‑Kontrolle, Compliance‑Absicherung, private Konnektivität (VPC Endpoints).
+- Schutz ruhender und bewegter Daten: Verschlüsselung, Schlüsselverwaltung, Audit‑ und Change‑Kontrollen.
+- Defensive Security: Fehlkonfigurationen erkennen, gegen bösartige Aktivitäten absichern und Sicherheitspraktiken früh im Pipeline‑Prozess verankern.
+
+## Wesentliche AWS‑Services, die ich gezielt eingesetzt habe
+- Compute: EC2 (ASG, Launch Templates), Lambda für serverless Workloads.
+- Networking: VPC, Subnets, Route Tables, Internet/NAT Gateways, NACLs, Security Groups, Route 53 (DNS/Health Checks).
+- Load Balancing & Routing: ALB/NLB, Target Groups, Path/Host‑Based Routing.
+- Storage: S3 (Versioning/Lifecycle), EBS und EFS nach Workload‑Profil.
+- Datenbanken: RDS (z. B. PostgreSQL/MySQL) mit Multi‑AZ/Backups; DynamoDB für NoSQL‑Patterns.
+- Observability: CloudWatch (Metriken, Logs, Alarme, Dashboards), CloudTrail für API‑Auditing.
+- Identity & Security: IAM (Policies/Roles), KMS, Secrets Manager/SSM Parameter Store.
+
+## Projektarbeiten (Auszug)
+- Recoverability in AWS: Auslegung für Wiederanlauf/RTO/RPO, Multi‑AZ‑Design, Backups/Snapshots, Failover‑Strategien.
+- Design, Provision & Monitoring at Scale: Terraform‑basierte Provisionierung, automatisierte Dashboards/Alarme, Right‑Sizing und Kostenkontrollen in der Praxis.
+
+## Lernartefakte & Repo
+Meine Notizen, Terraform‑Module, Beispiel‑Pipelines und Skripte veröffentliche ich in einem GitHub‑Repository:
+[GitHub: AWS Solution Architect – Lernunterlagen](https://github.com/DEIN_GITHUB_USERNAME/aws-solution-architect-notes)
+
+### Neue Fähigkeiten, die ich nun gezielt einbringen kann
+- Architekturentwurf für hochverfügbare, resiliente Systeme (Multi‑AZ/Region), mit klaren SLO/SLI/RTO/RPO.
+- Kosten‑ und Performance‑Optimierung: Messbare Ziele, CloudWatch‑Dashboards/Alarme, Right‑Sizing, Caching.
+- Reproduzierbare Provisionierung mit Terraform (Module, Remote State, Workspaces) und sicherer Betrieb mit Git‑basierter CI (Travis CI) und AWS CLI.
+- Netzwerksicherheit und Segmentierung in VPCs, restriktive Egress‑Pfade, private Konnektivität (VPC Endpoints).
+- Daten‑ und Zugriffssicherheit: IAM‑Governance, Verschlüsselung mit KMS, Geheimnisverwaltung.
+- Betrieb & Observability: Metriken, Logs, Traces, Alarmrouten – schnelles Reagieren und Wiederherstellen im Incident‑Fall.
+
+Dieses Zertifikat belegt meine Fähigkeit, skalierbare, sichere und kosteneffiziente AWS‑Lösungen ganzheitlich zu konzipieren und umzusetzen – von IaC‑Provisionierung über Betriebsprozesse bis hin zu Security by Design.
