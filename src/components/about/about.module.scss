@@ -86,7 +86,7 @@
     margin-top: 8px;
     font-size: 0.8em;
     font-weight: 500;
-    color: var(--color-neutral-strong);
+    color: var(--neutral-on-background-weak);
     text-align: center;
     line-height: 1.2;
 }
@@ -95,19 +95,7 @@
     color: var(--color-neutral-strong);
 }
 
-/* Dark mode specific styles */
-@media (prefers-color-scheme: dark) {
-    .skillLabel {
-        color: #e5e7eb; /* Light gray for dark mode */
-    }
-}
 
-/* Light mode specific styles */
-@media (prefers-color-scheme: light) {
-    .skillLabel {
-        color: #1f2937; /* Dunkleres Grau für Light Mode */
-    }
-}
 
 .placeholderIcon {
     width: 32px;
@@ -127,7 +115,6 @@
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(6px);
-    background: linear-gradient(135deg, var(--accent-background-strong), var(--page-background));
     border: 3px solid #C0C0C0; /* silver */
     border-radius: 20px;
     padding: 16px;
@@ -139,7 +126,6 @@
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     text-align: left;
     backdrop-filter: blur(4px);
-    color: var(--color-neutral-strong);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -154,13 +140,46 @@
     transform: translateX(-50%) translateY(0);
 }
 
-.skillDesc p {
-    color: var(--color-neutral-strong);
-    margin: 0;
+/* Light mode - clean light background */
+@media (prefers-color-scheme: light) {
+    .skillDesc {
+        background: linear-gradient(135deg, #f0fdff, #ffffff);
+        color: #1f2937; /* Dark gray for light mode */
+    }
+    
+    .skillDesc p {
+        color: #1f2937;
+        margin: 0;
+    }
+    
+    .skillDesc strong {
+        color: #0891b2; /* Cyan accent for emphasis */
+    }
+    
+    .skillDesc::before {
+        border-top: 8px solid #ffffff;
+    }
 }
 
-.skillDesc strong {
-    color: var(--color-neutral-strong);
+/* Dark mode - modern dark background with cyan accent */
+@media (prefers-color-scheme: dark) {
+    .skillDesc {
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        color: #e2e8f0; /* Light slate for dark mode */
+    }
+    
+    .skillDesc p {
+        color: #e2e8f0;
+        margin: 0;
+    }
+    
+    .skillDesc strong {
+        color: #22d3ee; /* Bright cyan for emphasis */
+    }
+    
+    .skillDesc::before {
+        border-top: 8px solid #1e293b;
+    }
 }
 
 .skillDesc::before {
@@ -173,7 +192,6 @@
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-top: 8px solid var(--page-background);
 }
 
 .skillDesc::after {
@@ -254,7 +272,6 @@
         left: 20px;
         transform: none;
         bottom: -8px;
-        border-top: 8px solid var(--page-background);
     }
 
     .skillDesc::after {

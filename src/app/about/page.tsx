@@ -164,6 +164,7 @@ export default function About() {
                         <Text
                           as="li"
                           variant="body-default-m"
+                          onBackground="neutral-weak"
                           key={`${experience.company}-achievement-${achievementIndex}`}
                         >
                           {achievement}
