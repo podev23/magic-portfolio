@@ -1,10 +1,7 @@
 import React from "react";
 
-import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Meta, Schema } from "@once-ui-system/core";
-import { home, about, person, newsletter, baseURL, routes } from "@/resources";
-import { Mailchimp } from "@/components";
-import { Projects } from "@/components/work/Projects";
-import { Posts } from "@/components/blog/Posts";
+import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Schema, SmartLink } from "@once-ui-system/core";
+import { home, about, person, baseURL } from "@/resources";
 
 export default function Home() {
   return (
@@ -67,23 +64,25 @@ export default function Home() {
           </RevealFx>
         </Column>
       </Column>
-      <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 1]} />
+      <RevealFx translateY="16" delay={0.6} fillWidth horizontal="start" paddingTop="12" paddingBottom="8">
+        <Column
+          fillWidth
+          paddingTop="20"
+          paddingBottom="20"
+          paddingLeft="20"
+          paddingRight="20"
+          gap="12"
+          style={{
+            background: "linear-gradient(135deg, rgba(120, 88, 255, 0.12), rgba(120, 88, 255, 0.04))",
+            borderRadius: "16px",
+            border: "1px solid rgba(148, 163, 184, 0.18)",
+          }}
+       >
+          <Heading as="h2" variant="display-strong-xs" wrap="balance">
+            Erfahre mehr über <SmartLink href="/about">mich</SmartLink> und wie ich in <SmartLink href="/work">Projekten</SmartLink> meine Fähigkeiten einsetze und weiterentwickle.
+          </Heading>
+        </Column>
       </RevealFx>
-      {routes["/blog"] && (
-        <Flex fillWidth gap="24" mobileDirection="column">
-          <Flex flex={1} paddingLeft="l" paddingTop="24">
-            <Heading as="h2" variant="display-strong-xs" wrap="balance">
-              Latest from the blog
-            </Heading>
-          </Flex>
-          <Flex flex={3} paddingX="20">
-            <Posts range={[1, 2]} columns="2" />
-          </Flex>
-        </Flex>
-      )}
-      <Projects range={[2]} />
-      {newsletter.display && <Mailchimp newsletter={newsletter} />}
     </Column>
   );
 }
