@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon, Media, Text, Flex } from "@once-ui-system/core";
+import { Icon, Media, Text } from "@once-ui-system/core";
 import { iconLibrary } from "@/resources/icons";
 import styles from "./about.module.scss";
 
@@ -19,19 +19,17 @@ interface Skill {
 
 interface SkillEmblemProps {
   skill: Skill;
-  isOpen: boolean;
-  onToggle: () => void;
 }
 
-export function SkillEmblem({ skill, isOpen, onToggle }: SkillEmblemProps) {
+export function SkillEmblem({ skill }: SkillEmblemProps) {
   return (
     <div className={styles.skillEmblem}>
       <button
-        className={`${styles.emblemButton} ${isOpen ? styles.active : ''}`}
-        onClick={onToggle}
-        aria-expanded={isOpen}
-        aria-controls={`skill-desc-${skill.title}`}
+        className={styles.emblemButton}
+        aria-haspopup="dialog"
+        aria-describedby={`skill-desc-${skill.title}`}
         title={`Mehr zu ${skill.title}`}
+        tabIndex={0}
       >
         {skill.images?.[0]?.isIcon ? (
           <Icon
@@ -54,16 +52,15 @@ export function SkillEmblem({ skill, isOpen, onToggle }: SkillEmblemProps) {
         )}
         <span className={styles.skillLabel}>{skill.title}</span>
       </button>
-      {isOpen && (
-        <div 
-          id={`skill-desc-${skill.title}`} 
-          className={styles.skillDesc}
-        >
-          <Text variant="body-default-m" onBackground="neutral-weak">
-            {skill.description}
-          </Text>
-        </div>
-      )}
+      <div
+        id={`skill-desc-${skill.title}`}
+        className={styles.skillDesc}
+        role="tooltip"
+      >
+        <Text variant="body-default-m" onBackground="neutral-weak">
+          {skill.description}
+        </Text>
+      </div>
     </div>
   );
 } 

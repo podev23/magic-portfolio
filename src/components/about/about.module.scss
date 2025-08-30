@@ -36,7 +36,7 @@
     background: none;
     border: 2px solid transparent;
     border-radius: 8px;
-    cursor: pointer;
+    cursor: default;
     padding: 12px 8px;
     display: flex;
     flex-direction: column;
@@ -45,12 +45,35 @@
     width: 100%;
     min-height: 80px;
     justify-content: center;
+    position: relative;
+    outline: none;
+}
+
+/* Connector line from emblem to tooltip */
+.emblemButton::after {
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%) scaleY(0.6);
+    width: 3px;
+    height: 18px;
+    border-radius: 3px;
+    background: #C0C0C0; /* silver for visibility */
+    opacity: 0;
+    z-index: 101; /* above tooltip pseudo elements */
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .emblemButton:hover {
     transform: scale(1.05);
     border-color: var(--color-neutral-medium);
     background-color: var(--color-neutral-alpha-weak);
+}
+
+.emblemButton:focus-visible {
+    border-color: var(--color-brand-strong);
+    box-shadow: 0 0 0 4px var(--color-brand-alpha-weak);
 }
 
 .emblemButton.active {
@@ -103,20 +126,32 @@
     position: absolute;
     bottom: 100%;
     left: 50%;
-    transform: translateX(-50%);
-    background: var(--color-surface-strong);
-    border: 1px solid var(--color-neutral-medium);
-    border-radius: 12px;
-    padding: 20px;
+    transform: translateX(-50%) translateY(6px);
+    background: linear-gradient(135deg, var(--accent-background-strong), var(--page-background));
+    border: 3px solid #C0C0C0; /* silver */
+    border-radius: 20px;
+    padding: 16px;
     margin-bottom: 12px;
-    max-width: 320px;
-    min-width: 280px;
+    width: clamp(280px, 36vw, 480px);
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
     z-index: 100;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     text-align: left;
-    backdrop-filter: blur(8px);
-    border: 1px solid var(--color-neutral-alpha-medium);
+    backdrop-filter: blur(4px);
     color: var(--color-neutral-strong);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+/* Pinned state: keep tooltip visible */
+.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
 }
 
 .skillDesc p {
@@ -138,7 +173,7 @@
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-top: 8px solid var(--color-surface-strong);
+    border-top: 8px solid var(--page-background);
 }
 
 .skillDesc::after {
@@ -151,8 +186,26 @@
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-top: 8px solid var(--color-neutral-alpha-medium);
+    border-top: 8px solid #C0C0C0; /* silver */
     z-index: -1;
+}
+
+/* Show tooltip on hover or keyboard focus (tooltip is sibling of button) */
+.emblemButton:hover + .skillDesc,
+.emblemButton:focus + .skillDesc,
+.emblemButton:focus-visible + .skillDesc {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Show connector when hovering/focusing */
+.emblemButton:hover::after,
+.emblemButton:focus::after,
+.emblemButton:focus-visible::after {
+    opacity: 1;
+    transform: translateX(-50%) scaleY(1);
 }
 
 @media (max-width: breakpoints.$s) {
@@ -174,13 +227,26 @@
     }
 
     .skillDesc {
-        max-width: 280px;
-        min-width: 240px;
         left: 0;
-        transform: none;
-        padding: 16px;
+        transform: translateY(6px);
+        padding: 12px;
         bottom: 100%;
         margin-bottom: 12px;
+        width: clamp(240px, 78vw, 440px);
+        aspect-ratio: 16 / 9;
+    }
+
+    /* Mobile alignment for connector line to match arrow offset */
+    .emblemButton::after {
+        left: 20px;
+        transform: scaleY(0.6);
+    }
+
+    .emblemButton:hover::after,
+    .emblemButton:focus::after,
+    .emblemButton:focus-visible::after {
+        transform: scaleY(1);
+        opacity: 1;
     }
 
     .skillDesc::before,
@@ -188,11 +254,17 @@
         left: 20px;
         transform: none;
         bottom: -8px;
-        border-top: 8px solid var(--color-surface-strong);
+        border-top: 8px solid var(--page-background);
     }
 
     .skillDesc::after {
         bottom: -9px;
-        border-top: 8px solid var(--color-neutral-alpha-medium);
+        border-top: 8px solid #C0C0C0; /* silver */
+    }
+
+    .emblemButton:hover + .skillDesc,
+    .emblemButton:focus + .skillDesc,
+    .emblemButton:focus-visible + .skillDesc {
+        transform: translateY(0);
     }
 }

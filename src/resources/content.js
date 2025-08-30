@@ -10,11 +10,11 @@ const person = {
   avatar: "/images/avatar.jpg",
   email: "fabian.weighold@s2023.tu-chemnitz.de",
   location: "Europe/Berlin", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "German"], // optional: Leave the array empty if you don't want to display languages
+  languages: ["Deutsch", "English"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
-  display: true,
+  display: false, // Temporär deaktiviert
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
@@ -66,9 +66,9 @@ const home = {
 
 const about = {
   path: "/about",
-  label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  label: "Über mich",
+  title: `Über mich – ${person.name}`,
+  description: `Lerne ${person.name} kennen, ${person.role} aus ${person.location}`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -101,16 +101,47 @@ const about = {
     experiences: [
       {
         company: "Porsche Leipzig GmbH",
-        timeframe: "2023 - Present",
-        role: "Fullstack Developer intern",
+        timeframe: "2023 - Gegenwart",
+        role: "Fullstack Developer Werkstudent",
         achievements: [
           <>
-            Developed a web application which automates the process of comparing a measureing system with a reference system, resulting in a 50% increase in user
-            engagement for the whole process.
+            Aufbau und Pflege einer Systemarchitektur mit mehreren Datenbankservern (MSSQL, PI Web API) sowie Linux-Servern mit Docker-Containern (MongoDB für User-Verwaltung mit gehashten Passwörtern, Redis Cache für Performanceoptimierung, monolithische WebApp).
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            CI/CD-Pipeline (GitLab): Automatisierte Feature-Rollouts und Deployments.
+          </>,
+          <>
+            Versionskontrolle und Projektmanagement via GitLab (Branches, Merge Requests, Code Reviews).
+          </>,
+          <>
+            Administration von Zugriffskontrollen (SSH), Cronjobs und Docker-Compose auf SUSE Linux Enterprise 15.
+          </>,
+          <>
+            Netzwerkmanagement inkl. Firewall-Regeln zur sicheren On-Prem-Kommunikation der Systeme.
+          </>,
+          <>
+            Requirements Engineering: Analyse, Abstimmung und Dokumentation von Anforderungen.
+          </>,
+          <>
+            Debugging und Troubleshooting komplexer Systeme (Backend, Datenbanken, Container).
+          </>,
+          <>
+            Package Management: Aktualisierung und Absicherung von Python-Paketen.
+          </>,
+          <>
+            Schnittstellenkoordination: Kommunikation mit Netzwerk-, Datenbank-Teams und Kunden.
+          </>,
+          <>
+            Dokumentation der Architektur, Deployments und Prozesse.
+          </>,
+          <>
+            Automatisierung von Abläufen durch Skripte, Cronjobs und Pipeline-Jobs.
+          </>,
+          <>
+            Performanceoptimierung durch Caching (Redis) und Reduktion von Datenladezeiten.
+          </>,
+          <>
+            UI/UX-Anpassungen nach Anforderungen beziehungsweise Userfeedback.
           </>,
         ],
         images: [
@@ -120,16 +151,11 @@ const about = {
       },
       {
         company: "ICM - Institut Chemnitzer Maschinen und Anlagen e.V.",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        timeframe: "2022 - 2023",
+        role: "Hilfswissenschaftler Produktionstechnik",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Durchführung von Recherchen im Bereich Produktionstechnik und erste Erfahrungen mit MATLAB.
           </>,
         ],
         images: [],
@@ -142,17 +168,17 @@ const about = {
     institutions: [
       {
         name: "Technische Universität Chemnitz",
-        description: <>Master degree in automotive software engineering.</>,
+        description: <>Master-Abschluss in Automotive Software Engineering.</>,
       },
       {
         name: "Hochschule Mittweida",
-        description: <>Bachelors degreee in mechanical engineering.</>,
+        description: <>Bachelor-Abschluss in Maschinenbau.</>,
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Technische Fähigkeiten",
     skills: [
       {
         title: "Docker",
