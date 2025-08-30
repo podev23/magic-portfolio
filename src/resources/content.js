@@ -59,7 +59,7 @@ const home = {
   subline: (
     <>
        Ich bin Fabian Weighold , Fullstack trainee.
-      <br /> Mit Fokus auf DevOps und Cloud setze ich auf Automatisierung und den Aufbau moderner, skalierbarer Systeme.
+      <br /> Mit Fokus auf Fullstack Development, DevOps und Cloud setze ich auf Automatisierung und den Aufbau moderner, skalierbarer Systeme.
     </>
   ),
 };
@@ -89,10 +89,9 @@ const about = {
         <br />
         Parallel erweitere ich meine Kenntnisse im Bereich Cloud-Architektur, indem ich ein Zertifizierungsprogramm zum Cloud Solution Architect absolviere.<br />
         <br />
-        Als eingeschriebener Masterstudent im Studiengang Automotive Software Engineering (geplant: Wechsel zu Web Engineering) bringe ich fundiertes technisches Verständnis mit, das ich gezielt auf moderne Web-, Cloud- und DevOps-Technologien anwende.<br />
+        Als Masterstudent im Studiengang Automotive Software Engineering bringe ich fundiertes technisches Verständnis mit, das ich gezielt auf moderne Web-, Cloud- und DevOps-Technologien anwende.<br />
         <br />
-        Mein mittelfristiges Ziel ist eine Position im Bereich DevOps Engineering, wo ich meine Fähigkeiten in Automation, CI/CD, Cloud-Infrastruktur und Softwarebetrieb weiter ausbauen und anwenden möchte. Ich interessiere mich besonders für ganzheitliche Systemarchitekturen, effiziente Deployment-Prozesse und stabile, skalierbare Infrastrukturen.
-      </>
+        Mein mittelfristiges Ziel ist eine Position, in der ich meine Fähigkeiten in Automation, CI/CD, Cloud-Infrastruktur und Softwarebetrieb weiter ausbauen und anwenden kann. Besonders spannend finde ich Rollen im Bereich DevOps Engineering, bin jedoch ebenso offen für verwandte Tätigkeiten wie Fullstack-Entwicklung oder Systemadministration, die den Aufbau ganzheitlicher Systemarchitekturen und stabiler Infrastrukturen fördern.“      </>
     ),
   },
   work: {
