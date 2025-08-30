@@ -256,7 +256,7 @@ const about = {
       },
       {
         title: "AWS",
-        description: <>Ich arbeite mit Amazon Web Services für Cloud-Infrastruktur und -Services. Dabei sammle ich Erfahrung mit EC2-Instanzen, Container-Orchestrierung mit ECS, Storage-Lösungen mit S3, und Datenbankservices wie RDS. Aktuell absolviere ich eine Zertifizierung zum AWS Solution Architect, um meine Cloud-Kenntnisse weiter zu vertiefen.</>,
+        description: <>Ich arbeite mit Amazon Web Services für Cloud-Infrastruktur und -Services. Dabei sammle ich Erfahrung mit EC2-Instanzen, Container-Orchestrierung mit EKS, Storage-Lösungen mit S3, und Datenbankservices wie RDS. Aktuell absolviere ich eine Zertifizierung zum AWS Solution Architect, um meine Cloud-Kenntnisse weiter zu vertiefen.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
