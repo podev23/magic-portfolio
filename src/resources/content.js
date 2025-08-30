@@ -94,87 +94,6 @@ const about = {
         Mein mittelfristiges Ziel ist eine Position, in der ich meine Fähigkeiten in Automation, CI/CD, Cloud-Infrastruktur und Softwarebetrieb weiter ausbauen und anwenden kann. Besonders spannend finde ich Rollen im Bereich DevOps Engineering, bin jedoch ebenso offen für verwandte Tätigkeiten wie Fullstack-Entwicklung oder Systemadministration, die den Aufbau ganzheitlicher Systemarchitekturen und stabiler Infrastrukturen fördern.“      </>
     ),
   },
-  work: {
-    display: true, // set to false to hide this section
-    title: "Erfahrungen",
-    experiences: [
-      {
-        company: "Porsche Leipzig GmbH",
-        timeframe: "2023 - Gegenwart",
-        role: "Fullstack Developer Werkstudent",
-        achievements: [
-          <>
-            Aufbau und Pflege einer Systemarchitektur mit mehreren Datenbankservern (MSSQL, PI Web API) sowie Linux-Servern mit Docker-Containern (MongoDB für User-Verwaltung mit gehashten Passwörtern, Redis Cache für Performanceoptimierung, monolithische WebApp).
-          </>,
-          <>
-            CI/CD-Pipeline (GitLab): Automatisierte Feature-Rollouts und Deployments.
-          </>,
-          <>
-            Versionskontrolle und Projektmanagement via GitLab (Branches, Merge Requests, Code Reviews).
-          </>,
-          <>
-            Administration von Zugriffskontrollen (SSH), Cronjobs und Docker-Compose auf SUSE Linux Enterprise 15.
-          </>,
-          <>
-            Netzwerkmanagement inkl. Firewall-Regeln zur sicheren On-Prem-Kommunikation der Systeme.
-          </>,
-          <>
-            Requirements Engineering: Analyse, Abstimmung und Dokumentation von Anforderungen.
-          </>,
-          <>
-            Debugging und Troubleshooting komplexer Systeme (Backend, Datenbanken, Container).
-          </>,
-          <>
-            Package Management: Aktualisierung und Absicherung von Python-Paketen.
-          </>,
-          <>
-            Schnittstellenkoordination: Kommunikation mit Netzwerk-, Datenbank-Teams und Kunden.
-          </>,
-          <>
-            Dokumentation der Architektur, Deployments und Prozesse.
-          </>,
-          <>
-            Automatisierung von Abläufen durch Skripte, Cronjobs und Pipeline-Jobs.
-          </>,
-          <>
-            Performanceoptimierung durch Caching (Redis) und Reduktion von Datenladezeiten.
-          </>,
-          <>
-            UI/UX-Anpassungen nach Anforderungen beziehungsweise Userfeedback.
-          </>,
-        ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          // Format: { src: string, alt: string, width: number, height: number, isIcon?: boolean }
-        ],
-      },
-      {
-        company: "ICM - Institut Chemnitzer Maschinen und Anlagen e.V.",
-        timeframe: "2022 - 2023",
-        role: "Hilfswissenschaftler Produktionstechnik",
-        achievements: [
-          <>
-            Durchführung von Recherchen im Bereich Produktionstechnik und erste Erfahrungen mit MATLAB.
-          </>,
-        ],
-        images: [],
-      },
-    ],
-  },
-  studies: {
-    display: true, // set to false to hide this section
-    title: "Bildung",
-    institutions: [
-      {
-        name: "Technische Universität Chemnitz",
-        description: <>Master-Abschluss in Automotive Software Engineering.</>,
-      },
-      {
-        name: "Hochschule Mittweida",
-        description: <>Bachelor-Abschluss in Maschinenbau.</>,
-      },
-    ],
-  },
   technical: {
     display: true, // set to false to hide this section
     title: "Technische Fähigkeiten",
@@ -295,7 +214,7 @@ const about = {
       {
         title: "NestJS",
         description: <>Im Rahmen eines Uni-Projekts habe ich mit NestJS eine Microservice-Architektur mit vier Services und einem API-Gateway umgesetzt. Mithilfe von Docker konnte ich die gesamte Infrastruktur lokal und in der Cloud (AWS) für Demozwecke betreiben und testen.
-Dabei sammelte ich praktische Erfahrung mit verteilten Systemen, Interservice-Kommunikation (TCP), API-Gateway-Routing und Cloud-Deployment.</>,
+      Dabei sammelte ich praktische Erfahrung mit verteilten Systemen, Interservice-Kommunikation (TCP), API-Gateway-Routing und Cloud-Deployment.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
@@ -320,6 +239,115 @@ Dabei sammelte ich praktische Erfahrung mit verteilten Systemen, Interservice-Ko
             isIcon: true,
           },
         ],
+      },
+      {
+        title: "Node.js",
+        description: <>Mit Node.js entwickle ich serverseitige JavaScript-Anwendungen und APIs. Ich nutze es für Backend-Services, Microservices-Architekturen und die Erstellung von RESTful APIs mit Express.js. Dabei sammle ich Erfahrung mit asynchroner Programmierung, Package Management mit npm und der Integration verschiedener Datenbanken.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "nodejs",
+            alt: "Node.js Logo",
+            width: 16,
+            height: 9,
+            isIcon: true,
+          },
+        ],
+      },
+      {
+        title: "AWS",
+        description: <>Ich arbeite mit Amazon Web Services für Cloud-Infrastruktur und -Services. Dabei sammle ich Erfahrung mit EC2-Instanzen, Container-Orchestrierung mit ECS, Storage-Lösungen mit S3, und Datenbankservices wie RDS. Aktuell absolviere ich eine Zertifizierung zum AWS Solution Architect, um meine Cloud-Kenntnisse weiter zu vertiefen.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "aws",
+            alt: "AWS Logo",
+            width: 16,
+            height: 9,
+            isIcon: true,
+          },
+        ],
+      },
+    ],
+  },
+  work: {
+    display: true, // set to false to hide this section
+    title: "Erfahrungen",
+    experiences: [
+      {
+        company: "Porsche Leipzig GmbH",
+        timeframe: "2023 - Gegenwart",
+        role: "Fullstack Developer Werkstudent",
+        achievements: [
+          <>
+            Aufbau und Pflege einer Systemarchitektur mit mehreren Datenbankservern (MSSQL, PI Web API) sowie Linux-Servern mit Docker-Containern (MongoDB für User-Verwaltung mit gehashten Passwörtern, Redis Cache für Performanceoptimierung, monolithische WebApp).
+          </>,
+          <>
+            CI/CD-Pipeline (GitLab): Automatisierte Feature-Rollouts und Deployments.
+          </>,
+          <>
+            Versionskontrolle und Projektmanagement via GitLab (Branches, Merge Requests, Code Reviews).
+          </>,
+          <>
+            Administration von Zugriffskontrollen (SSH), Cronjobs und Docker-Compose auf SUSE Linux Enterprise 15.
+          </>,
+          <>
+            Netzwerkmanagement inkl. Firewall-Regeln zur sicheren On-Prem-Kommunikation der Systeme.
+          </>,
+          <>
+            Requirements Engineering: Analyse, Abstimmung und Dokumentation von Anforderungen.
+          </>,
+          <>
+            Debugging und Troubleshooting komplexer Systeme (Backend, Datenbanken, Container).
+          </>,
+          <>
+            Package Management: Aktualisierung und Absicherung von Python-Paketen.
+          </>,
+          <>
+            Schnittstellenkoordination: Kommunikation mit Netzwerk-, Datenbank-Teams und Kunden.
+          </>,
+          <>
+            Dokumentation der Architektur, Deployments und Prozesse.
+          </>,
+          <>
+            Automatisierung von Abläufen durch Skripte, Cronjobs und Pipeline-Jobs.
+          </>,
+          <>
+            Performanceoptimierung durch Caching (Redis) und Reduktion von Datenladezeiten.
+          </>,
+          <>
+            UI/UX-Anpassungen nach Anforderungen beziehungsweise Userfeedback.
+          </>,
+        ],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          // Format: { src: string, alt: string, width: number, height: number, isIcon?: boolean }
+        ],
+      },
+      {
+        company: "ICM - Institut Chemnitzer Maschinen und Anlagen e.V.",
+        timeframe: "2022 - 2023",
+        role: "Hilfswissenschaftler Produktionstechnik",
+        achievements: [
+          <>
+            Durchführung von Recherchen im Bereich Produktionstechnik und erste Erfahrungen mit MATLAB.
+          </>,
+        ],
+        images: [],
+      },
+    ],
+  },
+  studies: {
+    display: true, // set to false to hide this section
+    title: "Bildung",
+    institutions: [
+      {
+        name: "Technische Universität Chemnitz",
+        description: <>Master-Abschluss in Automotive Software Engineering.</>,
+      },
+      {
+        name: "Hochschule Mittweida",
+        description: <>Bachelor-Abschluss in Maschinenbau.</>,
       },
     ],
   },
