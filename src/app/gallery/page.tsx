@@ -1,4 +1,5 @@
 import { Flex, Meta, Schema } from "@once-ui-system/core";
+import { notFound } from "next/navigation";
 import MasonryGrid from "@/components/gallery/MasonryGrid";
 import { baseURL, gallery, person } from "@/resources";
 
@@ -13,6 +14,9 @@ export async function generateMetadata() {
 }
 
 export default function Gallery() {
+  if (!gallery.display) {
+    notFound();
+  }
   return (
     <Flex maxWidth="l">
       <Schema
