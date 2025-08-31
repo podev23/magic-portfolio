@@ -46,10 +46,10 @@ const social = [
 
 const home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image: "/images/og/home.png",
   label: "Home",
   title: `${person.name}'s Portfolio`,
-  description: `A microservices architecture based web application showcasing web technologies and databases. ${person.role}`,
+  description: `Eine Portfolio Website von ${person.name} mit Inhalten zu Ihm und seinen Projekten. ${person.role}`,
   headline: <>Schnittstelle zwischen Entwicklung und Betrieb mit der Ausrichtung zur Cloud.</>,
   featured: {
     display: true,
