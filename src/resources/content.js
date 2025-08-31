@@ -43,7 +43,6 @@ const social = [
     link: `mailto:${person.email}`,
   },
 ];
-
 const home = {
   path: "/",
   image: "/images/og/home.png",
