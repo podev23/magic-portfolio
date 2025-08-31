@@ -245,43 +245,44 @@
     }
 
     .skillDesc {
-        left: 0;
-        transform: translateY(6px);
+        position: fixed;
+        top: var(--skill-tooltip-top, 96px); /* below header/nav, overridable via JS */
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: auto;
+        margin: 0;
         padding: 12px;
-        bottom: 100%;
-        margin-bottom: 12px;
-        width: clamp(240px, 78vw, 440px);
-        aspect-ratio: 16 / 9;
+        width: min(92vw, 560px);
+        max-width: 92vw;
+        max-height: 55vh;
+        overflow: auto;
+        aspect-ratio: auto;
+        z-index: 999;
     }
 
-    /* Mobile alignment for connector line to match arrow offset */
+    /* Hide connector line on mobile-centered tooltip */
     .emblemButton::after {
-        left: 20px;
-        transform: scaleY(0.6);
+        display: none;
     }
 
     .emblemButton:hover::after,
     .emblemButton:focus::after,
     .emblemButton:focus-visible::after {
-        transform: scaleY(1);
-        opacity: 1;
+        display: none;
     }
 
     .skillDesc::before,
     .skillDesc::after {
-        left: 20px;
-        transform: none;
-        bottom: -8px;
+        display: none;
     }
 
     .skillDesc::after {
-        bottom: -9px;
-        border-top: 8px solid #C0C0C0; /* silver */
+        display: none;
     }
 
     .emblemButton:hover + .skillDesc,
     .emblemButton:focus + .skillDesc,
     .emblemButton:focus-visible + .skillDesc {
-        transform: translateY(0);
+        transform: translateX(-50%);
     }
 }

@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useRef, useCallback } from "react";
 import { Icon, Media, Text } from "@once-ui-system/core";
 import { iconLibrary } from "@/resources/icons";
 import styles from "./about.module.scss";
@@ -22,14 +23,37 @@ interface SkillEmblemProps {
 }
 
 export function SkillEmblem({ skill }: SkillEmblemProps) {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const tooltipRef = useRef<HTMLDivElement | null>(null);
+
+  const positionTooltip = useCallback(() => {
+    if (!containerRef.current || !tooltipRef.current) return;
+    const containerRect = containerRef.current.getBoundingClientRect();
+    const overlayHeight = tooltipRef.current.offsetHeight || 220;
+    const headerOffset = 88; // header + spacing
+    const viewportHeight = window.innerHeight;
+    const desiredTop = containerRect.top - overlayHeight - 12; // place above skill
+    const clampedTop = Math.max(
+      headerOffset,
+      Math.min(desiredTop, viewportHeight - overlayHeight - 12)
+    );
+    tooltipRef.current.style.setProperty("--skill-tooltip-top", `${clampedTop}px`);
+  }, []);
+
+  const handleMouseEnter = () => positionTooltip();
+  const handleFocus = () => positionTooltip();
+
   return (
-    <div className={styles.skillEmblem}>
+    <div className={styles.skillEmblem} ref={containerRef}>
       <button
         className={styles.emblemButton}
         aria-haspopup="dialog"
         aria-describedby={`skill-desc-${skill.title}`}
         title={`Mehr zu ${skill.title}`}
         tabIndex={0}
+        onMouseEnter={handleMouseEnter}
+        onFocus={handleFocus}
+        onTouchStart={handleMouseEnter}
       >
         {skill.images?.[0]?.isIcon ? (
           <Icon
@@ -56,6 +80,7 @@ export function SkillEmblem({ skill }: SkillEmblemProps) {
         id={`skill-desc-${skill.title}`}
         className={styles.skillDesc}
         role="tooltip"
+        ref={tooltipRef}
       >
         <Text variant="body-default-m" onBackground="neutral-weak">
           {skill.description}
