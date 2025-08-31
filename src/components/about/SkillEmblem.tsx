@@ -29,15 +29,14 @@ export function SkillEmblem({ skill }: SkillEmblemProps) {
   const positionTooltip = useCallback(() => {
     if (!containerRef.current || !tooltipRef.current) return;
     const containerRect = containerRef.current.getBoundingClientRect();
-    const overlayHeight = tooltipRef.current.offsetHeight || 220;
-    const headerOffset = 88; // header + spacing
-    const viewportHeight = window.innerHeight;
-    const desiredTop = containerRect.top - overlayHeight - 12; // place above skill
-    const clampedTop = Math.max(
-      headerOffset,
-      Math.min(desiredTop, viewportHeight - overlayHeight - 12)
-    );
-    tooltipRef.current.style.setProperty("--skill-tooltip-top", `${clampedTop}px`);
+    const tooltipRect = tooltipRef.current.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
+    // Compute horizontal shift so tooltip stays within viewport horizontally
+    const tooltipLeft = containerRect.left + containerRect.width / 2 - tooltipRect.width / 2;
+    const overflowLeft = Math.min(0, tooltipLeft - 12);
+    const overflowRight = Math.max(0, tooltipLeft + tooltipRect.width + 12 - viewportWidth);
+    const shiftX = -(overflowLeft + overflowRight);
+    tooltipRef.current.style.setProperty("--skill-tooltip-shift-x", `${shiftX}px`);
   }, []);
 
   const handleMouseEnter = () => positionTooltip();

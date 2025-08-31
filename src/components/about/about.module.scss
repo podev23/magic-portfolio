@@ -245,15 +245,14 @@
     }
 
     .skillDesc {
-        position: fixed;
-        top: var(--skill-tooltip-top, 96px); /* below header/nav, overridable via JS */
+        position: absolute;
+        bottom: calc(100% + 12px);
         left: 50%;
-        transform: translateX(-50%);
-        bottom: auto;
+        transform: translateX(calc(-50% + var(--skill-tooltip-shift-x, 0px)));
         margin: 0;
         padding: 12px;
-        width: min(92vw, 560px);
-        max-width: 92vw;
+        width: clamp(240px, 78vw, 440px);
+        max-width: 90vw;
         max-height: 55vh;
         overflow: auto;
         aspect-ratio: auto;
@@ -283,6 +282,6 @@
     .emblemButton:hover + .skillDesc,
     .emblemButton:focus + .skillDesc,
     .emblemButton:focus-visible + .skillDesc {
-        transform: translateX(-50%);
+        transform: translateX(calc(-50% + var(--skill-tooltip-shift-x, 0px)));
     }
 }
